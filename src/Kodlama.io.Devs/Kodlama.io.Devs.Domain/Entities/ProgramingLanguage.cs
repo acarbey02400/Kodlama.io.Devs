@@ -19,5 +19,6 @@ namespace Kodlama.io.Devs.Domain.Entities
             Name = name;
         }
         public string Name { get; set; }
+        public virtual ICollection<PLTechnology> PLTechnologies { get; set; }
     }
 }

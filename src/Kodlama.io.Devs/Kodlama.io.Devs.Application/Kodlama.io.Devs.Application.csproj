@@ -7,13 +7,39 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Features\GithubProfiles\Constants\" />
+    <Folder Include="Features\GithubProfiles\Models\" />
+    <Folder Include="Features\GithubProfiles\Rules\" />
+    <Folder Include="Features\GithubProfiles\Queries\" />
+    <Folder Include="Features\OperationClaims\Constants\" />
+    <Folder Include="Features\OperationClaims\Models\" />
+    <Folder Include="Features\OperationClaims\Rules\" />
+    <Folder Include="Features\OperationClaims\Queries\" />
+    <Folder Include="Features\PLTechnologies\Constants\" />
     <Folder Include="Features\ProgramingLanguages\Constants\" />
+    <Folder Include="Features\UserOperationClaims\Constants\" />
+    <Folder Include="Features\UserOperationClaims\Models\" />
+    <Folder Include="Features\UserOperationClaims\Rules\" />
+    <Folder Include="Features\UserOperationClaims\Queries\" />
+    <Folder Include="Features\Users\Constants\" />
+    <Folder Include="Features\Users\Models\" />
+    <Folder Include="Features\Users\Rules\" />
+    <Folder Include="Features\Users\Queries\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.2" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
   </ItemGroup>
 
