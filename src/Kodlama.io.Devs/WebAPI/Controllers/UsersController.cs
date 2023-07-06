@@ -9,11 +9,11 @@ namespace WebAPI.Controllers
     [ApiController]
     public class UsersController : BaseController
     {
-        [HttpPost]
-        public async Task<ActionResult> Add([FromBody] CreateUserCommand command)
-        {
-            CreateUserDto createUserDto = await Mediator.Send(command);
-            return Created("", createUserDto);
-        }
+        //[HttpPost]
+        //public async Task<ActionResult> Add([FromBody] CreateUserCommand command)
+        //{
+        //    CreateUserDto createUserDto = await Mediator.Send(command);
+        //    return Created("", createUserDto);
+        //}
     }
 }

@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Auth\Constants\" />
+    <Folder Include="Features\Auth\Models\" />
+    <Folder Include="Features\Auth\Queries\" />
     <Folder Include="Features\GithubProfiles\Constants\" />
     <Folder Include="Features\GithubProfiles\Models\" />
     <Folder Include="Features\GithubProfiles\Rules\" />

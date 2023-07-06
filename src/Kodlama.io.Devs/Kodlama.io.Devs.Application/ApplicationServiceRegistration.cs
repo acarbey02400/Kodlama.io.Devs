@@ -1,7 +1,9 @@
 ﻿using Core.Application.Pipelines.Validation;
 using FluentValidation;
+using Kodlama.io.Devs.Application.Features.Auth.Rules;
 using Kodlama.io.Devs.Application.Features.PLTechnologies.Rules;
 using Kodlama.io.Devs.Application.Features.ProgramingLanguages.Rules;
+using Kodlama.io.Devs.Application.Services.AuthService;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -23,7 +25,8 @@ namespace Kodlama.io.Devs.Application
 
             services.AddScoped<ProgramingLanguageBusinessRules>();
             services.AddScoped<PLTechnologiesBusinessRules>();
-
+            services.AddScoped<AuthBusinessRules>();
+            services.AddScoped<IAuthService, AuthManager>();
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
             /*services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));
