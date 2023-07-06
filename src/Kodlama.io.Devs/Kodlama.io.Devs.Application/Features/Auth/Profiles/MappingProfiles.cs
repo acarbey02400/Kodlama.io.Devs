@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Kodlama.io.Devs.Application.Features.Auth.Commands.Login;
 using Kodlama.io.Devs.Application.Features.Auth.Commands.Register;
 using Kodlama.io.Devs.Application.Features.Auth.Dtos;
 using System;
@@ -14,6 +15,7 @@ namespace Kodlama.io.Devs.Application.Features.Auth.Profiles
         public MappingProfiles()
         {
             CreateMap<RegisterCommand,RegisteredDto>().ReverseMap();
+            CreateMap<LoginCommand, LoginedDto>().ReverseMap();
         }
     }
 }

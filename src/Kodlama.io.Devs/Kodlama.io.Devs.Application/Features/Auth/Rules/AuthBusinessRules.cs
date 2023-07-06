@@ -25,13 +25,15 @@ namespace Kodlama.io.Devs.Application.Features.Auth.Rules
             User? user = await _userRepository.GetAsync(u => u.Email == email);
             if (user != null) throw new BusinessException("Email already exists!");
         }
-
-        public void IsEmailOrPasswordRegistered(User? user, UserForLoginDto userForLoginDto)
+       
+        public async Task<User> IsEmailOrPasswordRegistered(UserForLoginDto userForLoginDto)
         {
+            User? user = await _userRepository.GetAsync(u => u.Email == userForLoginDto.Email);
             if (user == null) throw new BusinessException("Email not found");
-
             bool isVerified = HashingHelper.VerifyPasswordHash(userForLoginDto.Password, user.PasswordHash, user.PasswordSalt);
             if (!isVerified) throw new BusinessException("Wrong password");
+            return user;
         }
+       
     }
 }

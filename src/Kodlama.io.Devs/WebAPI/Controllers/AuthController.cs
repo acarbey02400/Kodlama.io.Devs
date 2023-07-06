@@ -1,5 +1,6 @@
 ﻿using Core.Security.Dtos;
 using Core.Security.Entities;
+using Kodlama.io.Devs.Application.Features.Auth.Commands.Login;
 using Kodlama.io.Devs.Application.Features.Auth.Commands.Register;
 using Kodlama.io.Devs.Application.Features.Auth.Dtos;
 using Microsoft.AspNetCore.Http;
@@ -21,6 +22,19 @@ namespace WebAPI.Controllers
             };
 
             RegisteredDto result = await Mediator.Send(registerCommand);
+            SetRefreshTokenToCookie(result.RefreshToken);
+            return Created("", result.AccessToken);
+        }
+        [HttpPost("Login")]
+        public async Task<IActionResult> Login([FromBody] UserForLoginDto userForLoginDto)
+        {
+            LoginCommand loginCommand = new()
+            {
+                UserForLoginDto = userForLoginDto,
+                IpAddress = GetIpAddress()
+            };
+
+            LoginedDto result = await Mediator.Send(loginCommand);
             SetRefreshTokenToCookie(result.RefreshToken);
             return Created("", result.AccessToken);
         }
